@@ -45,6 +45,7 @@ test 패키지 안에서 CommentServiceTest 클래스에 comment_등록_중_할�
 
 test 패키지 안에서 ManagerServiceTest 클래스에 todo의_user가_null인_경우_예외가_발생한다()가 서비스코드 성공하도록 수정
 
+
 🚀 레벨 1 – 코드 개선/리팩토링
 
 ✔️ Early Return 적용
@@ -60,6 +61,7 @@ test 패키지 안에서 ManagerServiceTest 클래스에 todo의_user가_null인
 
 코드 분리, 재사용성, 자동화된 검증까지 달성
 
+
 ⚡️ 레벨 2 – JPA N+1 문제 해결
 
 ✔️ fetch join → @EntityGraph 리팩토링
@@ -72,6 +74,7 @@ test 패키지 안에서 ManagerServiceTest 클래스에 todo의_user가_null인
 기존에 fetch join 쿼리(@Query)를 쓰던 곳에서
 → @EntityGraph(attributePaths = "user")로 변경
 → 서비스/컨트롤러의 findByIdWithUser → findById 네이밍도 함께 수정 필요
+
 
 🧪 레벨 3 – 테스트코드/예외처리 자동화
 
