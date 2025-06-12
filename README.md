@@ -108,7 +108,6 @@ null 체크 위치를 id 접근 전에 해야 커스텀 예외로 명확히 처�
 
 fetch join에서 @EntityGraph로 바꿀 땐, 네이밍/사용법도 함께 맞춰야 에러 X
 
-자세한 트러블 슈팅 관련 내용은 https://hoojun99.tistory.com/
 
 ✅ 실전에서 배운 점
 
