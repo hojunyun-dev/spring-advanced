@@ -4,8 +4,8 @@
 목표: 실무형 Spring 백엔드 개발 역량 강화 (리팩토링, N+1, 테스트코드 등)
 
 ✅ 요구사항
-LV1️⃣ 코드개선
 
+LV1️⃣ 코드개선
 Early Return
 
 조건에 맞지 않은 경우 즉시 리턴하여 불필요한 로직을 실행 방지하고 성능 향상
@@ -27,7 +27,6 @@ UserService 클래스에서 changePassword() 메서드 리팩토링
 Validation → 요청 DTO에서 처리 할 수 있도록 수정
 
 LV2️⃣ N+1 문제
-
 N+1 문제
 
 TodoRepository에서 JPQL fetch join을 @EntityGraph 기반 구현으로 수정
@@ -35,7 +34,6 @@ TodoRepository에서 JPQL fetch join을 @EntityGraph 기반 구현으로 수정
 TodoController TodoService 통해 Todo 관련 데이터 처리
 
 LV3️⃣ 테스트 코드 연습
-
 예상대로 성공하는지
 
 test 패키지 안에서 PassEncoderTest 클래스에 matches_메서드가_정상적으로_동작한다()가 성공하도록 수정
@@ -63,6 +61,7 @@ test 패키지 안에서 ManagerServiceTest 클래스에 todo의_user가_null인
 코드 분리, 재사용성, 자동화된 검증까지 달성
 
 ⚡️ 레벨 2 – JPA N+1 문제 해결
+
 ✔️ fetch join → @EntityGraph 리팩토링
 기존 JPQL fetch join 코드를 @EntityGraph로 대체
 
@@ -75,6 +74,7 @@ test 패키지 안에서 ManagerServiceTest 클래스에 todo의_user가_null인
 → 서비스/컨트롤러의 findByIdWithUser → findById 네이밍도 함께 수정 필요
 
 🧪 레벨 3 – 테스트코드/예외처리 자동화
+
 ✔️ 테스트 코드 파라미터 순서 실수
 matches(원본, 암호화된 값) 순서가 아니라
 반대로 써서 테스트가 실패했음
@@ -98,12 +98,14 @@ null 체크는 항상 객체 사용(메서드 호출) 전에
 “가장 먼저” 해야 원하는 예외로 안전하게 처리할 수 있음
 
 💡 트러블슈팅
+
 null 체크 위치를 id 접근 전에 해야 커스텀 예외로 명확히 처리할 수 있다.
 예외 메시지/타입/순서가 정확히 맞아야 테스트코드가 통과
 fetch join에서 @EntityGraph로 바꿀 땐, 네이밍/사용법도 함께 맞춰야 에러 X
 자세한 트러블 슈팅 관련 내용은 https://hoojun99.tistory.com/
 
 ✅ 실전에서 배운 점
+
 리팩토링 시 “불필요한 연산/조건”부터 early return으로 빼는 습관
 유효성 검사는 DTO에서
 테스트코드는 내가 실수하는 부분을 자동으로 잡아주는 최고의 개발자 도구
