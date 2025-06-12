@@ -34,7 +34,7 @@ class CommentServiceTest {
     private CommentService commentService;
 
     @Test
-    public void comment_등록_중_할일을_찾지_못해_에러가_발생한다() {
+    public void comment_등록_중_할일을_찾지_못해_ServerException_발생한다() { //매서드명에 ServerException(예외타입)을 추가
         // given
         long todoId = 1;
         CommentSaveRequest request = new CommentSaveRequest("contents");
